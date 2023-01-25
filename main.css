@@ -1,0 +1,130 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body > header {
+    background-color: #2f3640;
+    padding:  16px 0;
+    color: #f5f6fa;
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header li {
+    display: inline;
+    font-weight: bold;
+    margin-left: 15px;
+}
+
+header li a {
+    color: #f5f6fa;
+    text-decoration: none;
+}
+
+header li a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    width: 1366px;
+    margin: 0 auto;
+}
+
+.articles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.articles  article img {
+    width: 100%;
+}
+
+.articles article {
+    width: 30%;
+}
+
+section {
+    padding: 16px 0;
+}
+
+section h2, .articles article {
+    margin-bottom: 16px;
+}
+
+
+.articles article h3 {
+    margin-top:  8px;
+    margin-bottom: 8px;
+    font-size: 24px;
+}
+
+
+.articles article a {
+    background-color: blue;
+    color: #fff;
+    padding: 8px;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+.articles article a:hover {
+    text-decoration: underline;
+}
+
+
+section h2 {
+    font-size: 32px;
+}
+
+time {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #707070;
+}
+
+#sports {
+    background-color: rgba(0, 255, 0, 0.1);
+}
+
+#sports .articles article a {
+    background-color: rgba(13, 122, 13, 0.9);
+}
+
+#economy {
+    background-color: rgba(230, 230, 0, 0.1);
+}
+
+#economy .articles article a {
+    background-color: #ff9809;
+}
+
+#entertainment {
+    background-color: rgba(230, 0, 127, 0.1);
+}
+
+#entertainment .articles article a {
+    background-color: #e50299;
+}
+
+#technology {
+    background-color: rgba(3, 89, 211, 0.1);
+}
+
+#technology .articles article a {
+    background-color: rgba(7, 56, 215, 0.9);
+}
+
+
+
