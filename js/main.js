@@ -3,13 +3,13 @@ $(document).ready(function () {
     $('form').on('submit', function (e) {
         e.preventDefault();
     });
-
- 	//Declaração de máscara para CPF   
+    
+    //Declaração de máscara para CPF   
     $('#cpf').mask('000.000.000-00', {
         placeholder: '000.000.000-00'
     });
-
-   	//Declaração de máscara para CEP
+    
+    //Declaração de máscara para CEP
     $('#cep').mask('00000-000',
     {
         placeholder: '00000-000'
@@ -26,6 +26,7 @@ $(document).ready(function () {
     };
     $('.phone').mask('(00) ', opcoesTelefone);
 
+    //Verifica quando o formulário é enviado    
     $('form').on('submit', function(e){
         console.log(e.target);
     });
