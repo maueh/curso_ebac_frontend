@@ -1,0 +1,114 @@
+@import "variaveis.less";
+@import "mapas.less";
+@breakpointTablet: ~"(max-width: 1023px)";
+@breakpointMobile: ~"(max-width: 767px)";
+
+.arredondar-cantos (@raio: #espacos[x1]){
+    border-radius: @raio;
+    -webkit-border-radius: @raio;
+    -moz-border-radius: @raio;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: @fontFamily;
+}
+
+body {
+    background-color: #cores[fundoTela];
+}
+
+li {
+    list-style: none;
+}
+
+.container {
+    max-width: #larguraMaxima[desktop];
+    width: 100%;
+    margin: 0 auto;
+    
+    @media @breakpointTablet {
+        max-width: #larguraMaxima[tablet];
+    }
+}
+
+header {
+    background-color: #cores[fundoCabecalho];
+    position: sticky;
+    top: 0;
+    left: 0;
+    
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: #espacos[x2] 0;
+    }
+}
+
+.menu {
+    display: flex;
+    
+    li {
+        font-weight: bold;
+        margin-left: #espacos[x3];
+        
+        a {
+            color: #cores[linkCabecalho];
+            text-decoration: none;
+        }
+    }
+}
+
+section {
+    padding: #espacos[x7] 0;
+}
+
+.products {
+    margin-top: #espacos[x5];
+    display: grid;
+    grid-template-columns: repeat(3, 32.66%);
+    column-gap: 1%;
+    row-gap: 4%;
+    width: 100%;
+    
+    @media @breakpointTablet {
+        grid-template-columns: repeat(2, 48.5%);
+        column-gap: 3%;
+    }
+    
+    @media @breakpointMobile {
+        display: block;
+    }
+}
+
+.product {
+    
+    &-item {
+        @media @breakpointMobile {
+            margin-bottom: #espacos[x4];
+        }
+
+        img {
+            width: 100%;
+            .arredondar-cantos(#espacos[x2]);
+        }
+    }
+    
+    &-button {
+        display: block;
+        background-color: #cores[botaoFundo];
+        color: #cores[botaoTexto];
+        text-align: center;
+        padding: #espacos[x1] 0;
+        .arredondar-cantos;
+        margin-top: #espacos[x1];
+        text-decoration: none;
+        
+        &:hover {
+            background-color: #cores[botaoFundoDestacado];
+        }
+    }
+}

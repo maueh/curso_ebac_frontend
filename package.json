@@ -1,0 +1,15 @@
+{
+  "name": "exercicio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "less": "less-watch-compiler ./source/styles ./build/styles main.less"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "less": "^4.1.3",
+    "less-watch-compiler": "^1.16.3"
+  }
+}

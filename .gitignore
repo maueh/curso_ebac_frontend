@@ -1,0 +1,6 @@
+node_modules
+build
+.vscode
+material
+index2.html
+styles.css
