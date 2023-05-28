@@ -28,10 +28,6 @@ li {
     max-width: #larguraMaxima[desktop];
     width: 100%;
     margin: 0 auto;
-    
-    @media @breakpointTablet {
-        max-width: #larguraMaxima[tablet];
-    }
 }
 
 header {
@@ -73,24 +69,10 @@ section {
     column-gap: 1%;
     row-gap: 4%;
     width: 100%;
-    
-    @media @breakpointTablet {
-        grid-template-columns: repeat(2, 48.5%);
-        column-gap: 3%;
-    }
-    
-    @media @breakpointMobile {
-        display: block;
-    }
 }
 
 .product {
-    
     &-item {
-        @media @breakpointMobile {
-            margin-bottom: #espacos[x4];
-        }
-
         img {
             width: 100%;
             .arredondar-cantos(#espacos[x2]);
@@ -110,5 +92,26 @@ section {
         &:hover {
             background-color: #cores[botaoFundoDestacado];
         }
+    }
+}
+
+@media screen and @breakpointTablet {
+    .container {
+        max-width: #larguraMaxima[tablet];
+    }
+    
+    .products {
+        grid-template-columns: repeat(2, 48.5%);
+        column-gap: 3%;
+    }
+}
+
+@media screen and @breakpointMobile {
+    .products {
+        display: block;
+    }
+    
+    .product-item {
+        margin-bottom: #espacos[x4];
     }
 }
