@@ -18,11 +18,15 @@ module.exports = function(grunt) {
         watch: {
             less: {
                 files: ['./source/styles/*.less'],
-                tasks: ['less:development']
+                tasks: ['less:build']
             },
             uglify: {
                 files: ['./source/scripts/*.js'],
                 tasks: ['uglify']
+            },
+            html: {
+                files: ['./source/*.html'],
+                tasks: ['replace:build']
             }
         },
         replace: {
@@ -57,7 +61,9 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-replace');
 
     grunt.registerTask('default', ['watch']);
-    grunt.registerTask('build', ['less:build', 'uglify','replace:build'])
+    grunt.registerTask('build', ['less:build', 'uglify','replace:build']);
+    grunt.registerTask('compilaLess', ['less:build']);
+    grunt.registerTask('comprimeJS', ['uglify']);
 }
 
 
