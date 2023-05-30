@@ -2,20 +2,10 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         less: {
-            development: {
+            build: {
                 files: {
-                    'build/styles/main.css': 'source/styles/main.less'
+                    './build/styles/main.css': './source/styles/*.less'
                 }
-            }
-        },
-        watch: {
-            less: {
-                files: ['./source/styles/main.less'],
-                tasks: ['less:development']
-            },
-            uglify: {
-                files: ['./source/scripts/main.js'],
-                tasks: ['uglify']
             }
         },
         uglify: {
@@ -24,16 +14,50 @@ module.exports = function(grunt) {
                     './build/scripts/main.min.js': './source/scripts/main.js'
                 }
             }
+        },
+        watch: {
+            less: {
+                files: ['./source/styles/*.less'],
+                tasks: ['less:development']
+            },
+            uglify: {
+                files: ['./source/scripts/*.js'],
+                tasks: ['uglify']
+            }
+        },
+        replace: {
+            build: {
+                options: {
+                    patterns: [
+                        {
+                            match: 'ENDERECO_CSS',
+                            replacement: './styles/main.css'
+                        },
+                        {
+                            match: 'ENDERECO_JS',
+                            replacement: './scripts/main.min.js'
+                        }
+                    ]
+                },
+                files: [
+                    {
+                        expand: true,
+                        flatten: true,
+                        src: ['source/index.html'],
+                        dest: 'build/'
+                    }
+                ]
+            }
         }
     });
     
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-uglify');
-    
+    grunt.loadNpmTasks('grunt-replace');
+
     grunt.registerTask('default', ['watch']);
-    grunt.registerTask('less', ['less:development']);
-    //grunt.registerTask('comprimeJS', ['uglify']);
+    grunt.registerTask('build', ['less:build', 'uglify','replace:build'])
 }
 
 
