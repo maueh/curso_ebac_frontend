@@ -1,19 +1,14 @@
 {
-  "name": "exercicio_grunt",
+  "name": "exercicio_bem",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "grunt": "grunt"
+    "sass": "sass ./main.scss ./build/main.css"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "grunt": "^1.6.1",
-    "grunt-contrib-less": "^3.0.0",
-    "grunt-contrib-uglify": "^5.2.2",
-    "grunt-contrib-watch": "^1.1.0",
-    "grunt-replace": "^2.0.2",
-    "npm-check-updates": "^16.10.12"
+    "sass": "^1.62.1"
   }
 }
