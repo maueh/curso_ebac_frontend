@@ -7,7 +7,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const avatar = document.querySelector("#avatar");
     const link_usuario = document.querySelector("#link_usuario");
     
-    fetch(`https://api.github.com/users/maueh`)
+    const endpoint = `https://api.github.com/users/${nome_usuario.innerText}`;
+
+    fetch(endpoint)
     .then(function(resposta) {
         return resposta.json();
     })
@@ -20,11 +22,11 @@ document.addEventListener('DOMContentLoaded', function() {
         } catch {
             nome.innerHTML = json.login;
         }
-        nome_usuario.innerHTML = json.login;
+        nome_usuario.innerText = json.login;
         avatar.src = json.avatar_url;
-        seguidores.innerHTML += json.followers;
-        seguindo.innerHTML += json.following;
-        repositorios.innerHTML += json.public_repos;
+        seguidores.innerText += json.followers;
+        seguindo.innerText += json.following;
+        repositorios.innerText += json.public_repos;
         link_usuario.href = json.html_url;
     });
 });
