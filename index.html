@@ -1,35 +1,32 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercício boas práticas de CSS</title>
+    <title>Meu Github</title>
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    <div class="produtos">
-        <div class="produto">
-            <img class="produto__imagem" src="https://via.placeholder.com/100x100">
-            <h4 class="produto__nome">Nome do produto</h4>
-            <p class="produto__descricao">
-                Descrição do produto
-            </p>
+    <header>
+        <div class="container">
+            <img class="profile-avatar" src="https://via.placeholder.com/180x180" alt="." id="avatar">
+            <h1 class="profile-name" id="nome">Nome</h1>
+            <h2 class="profile-username">@<span id="nome_usuario">maueh</span></h2>
+            <ul class="numbers">
+                <li class="numbers-item" id="qtd_repositorios">
+                    <h4>Repositórios</h4>
+                </li>
+                <li class="numbers-item" id="qtd_seguidores">
+                    <h4>Seguidores</h4>
+                </li>
+                <li class="numbers-item" id="qtd_seguindo">
+                    <h4>Seguindo</h4>
+                </li>
+            </ul>
+            <a href="#" class="profile-link" id="link_usuario">Ver no Github</a>
         </div>
-        <div class="produto produto--em-destaque">
-            <img class="produto__imagem" src="https://via.placeholder.com/100x100">
-            <h4 class="produto__nome">Nome do produto</h4>
-            <p class="produto__descricao">
-                Descrição do produto
-            </p>
-        </div>
-        <div class="produto">
-            <img class="produto__imagem" src="https://via.placeholder.com/100x100">
-            <h4 class="produto__nome">Nome do produto</h4>
-            <p class="produto__descricao">
-                Descrição do produto
-            </p>
-        </div>
-    </div>
+    </header>
+    <script src="./main.js"></script>
 </body>
 </html>
