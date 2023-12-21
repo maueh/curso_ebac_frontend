@@ -71,8 +71,9 @@ function Heroi(nome) {
 
   this.aoMorrer = function (personagemAtacando) {
     console.log(
-      `\nGAME OVER!\n${personagemAtacando.getNome()} ganhou de você.`
+      `\nGAME OVER!\n${personagemAtacando.getNome()} ganhou de você.\n\nResultados do confronto:`
     );
+    this.showStatus();
   };
 }
 
@@ -138,8 +139,9 @@ do {
   }
 } while (indice < qtdeInimigos && !fimJogo);
 
-heroi.showStatus();
 if (!fimJogo) {
+  console.log(`Resultados do confronto:`);
+  heroi.showStatus();
   console.log(`\nVocê derrotou todos os capangas do Drácula!`);
   console.log(`Agora, prepare-se para enfrentá-lo cara a cara:\n`);
 }
@@ -150,7 +152,7 @@ const boss = new Chefao("Drácula");
 while (!fimJogo) {
   boss.atacar(heroi);
   if (heroi.getIsDead()) {
-    console.log(`☠ ☠ ☠\n`);
+    console.log(`☠  Você morreu!\n`);
     fimJogo = true;
   } else {
     heroi.atacar(boss);
