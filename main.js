@@ -111,10 +111,14 @@ listaAlunos.forEach((aluno) =>
   console.log(`● ${aluno.nome} - Nota: ${aluno.nota} `)
 );
 
-// Lista de alunos aprovados
-const alunosAprovados = listaAlunos.filter((aluno) => aluno.nota >= 6);
+// Função para listar alunos com notas maior ou igual a 6
+function Aprovados(lista) {
+  const alunosAprovados = lista.filter((aluno) => aluno.nota >= 6);
+  return alunosAprovados;
+}
 
+// Lista de alunos aprovados
 console.log(`\nLista de alunos aprovados:`);
-alunosAprovados.forEach((aluno) =>
+Aprovados(listaAlunos).forEach((aluno) =>
   console.log(`● ${aluno.nome} - Nota: ${aluno.nota} `)
 );
